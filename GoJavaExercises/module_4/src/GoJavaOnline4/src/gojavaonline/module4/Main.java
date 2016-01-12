@@ -71,7 +71,7 @@ public class Main {
                     System.out.println("Degree(Fahrenheit): ");
                     degree = scanner.nextFloat();
 
-                    System.out.println("Degree(Celsius): " + CelsiusFahrenheitCalculator.celsiusToFahrenheit(degree));
+                    System.out.println("Degree(Celsius): " + CelsiusFahrenheitCalculator.fahrenheitToCelsius((degree)));
 
                     break;
                 case 6:
