@@ -2,6 +2,8 @@ package combinationOfFlowers;
 
 import exceptions.QuantityOfFlowersException;
 import flowers.BaseFlower;
+import flowers.RoseFlower;
+import utils.Print;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,5 +73,11 @@ public class BouquetOfFlowers {
 
     public String toString() {
         return new StringBuilder().append("Name of Bouquet: ").append(getName()).append("\n").append(flowersInfo()).toString();
+    }
+
+    public void printInfo() {
+        Print.nameSort(flower);
+        System.out.println();
+        Print.printStream(flower);
     }
 }
