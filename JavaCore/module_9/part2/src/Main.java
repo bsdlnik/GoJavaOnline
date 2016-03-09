@@ -1,9 +1,13 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
 import combinationOfFlowers.BouquetOfFlowers;
 import exceptions.QuantityOfFlowersException;
 import exceptions.SizeOfFlowerException;
 import flowers.RoseFlower;
+import utils.CaesarPasswd;
 import utils.Print;
 import utils.SelectMenu;
+
+import java.net.CacheRequest;
 
 public class Main {
 
@@ -31,7 +35,20 @@ public class Main {
 
 
 
+
+
         bouquet.printInfo();
+
+        System.out.println(CaesarPasswd.encode(bouquet.toString(), 7));
+        System.out.println(CaesarPasswd.encode (CaesarPasswd.decode(bouquet.toString(), 7), 7));
+
+        // - Test passwd
+        // B Ifmmp xpsme!
+        String text = "A Hello world!";
+        System.out.println(CaesarPasswd.encode(text, 1));
+        System.out.println(CaesarPasswd.decode(CaesarPasswd.encode(text, 1), 1));
+        System.out.println(CaesarPasswd.decode("B Ifmmp xpsme!", 1));
+
 
 
     }
