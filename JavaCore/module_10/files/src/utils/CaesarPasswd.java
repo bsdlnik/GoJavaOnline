@@ -1,6 +1,6 @@
 package utils;
 
-public final class CaesarPasswd {
+public class CaesarPasswd {
 
     private static final int ALPHABET_LENGTH = 26;
     private static final int SPACE_SYMBOL = 32;
