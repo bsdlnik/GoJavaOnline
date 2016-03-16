@@ -1,10 +1,65 @@
-package com.deonkotlin.Test;
+package com.deonkotlin.Utils;
 
 import java.util.List;
+import java.util.Set;
 
-public final class ListTimeTest {
+public class CollectionTimeTest {
 
-    public static long addTimeTest(List<Integer> list, int elementsQuantity, int testsQuantity) {
+    private long elapsedTime = 0;
+    private long startTime = 0;
+    private long endTime = 0;
+    private long result = 0;
+
+    public long addIndexTestForList(List<Integer> list, int valueAndPosition, int testsQuantity) {
+        result = 0;
+        for (int i = 0; i < testsQuantity; i++) {
+            list.clear();
+            startTime = System.currentTimeMillis();
+            list.add(valueAndPosition, valueAndPosition);
+            endTime = System.currentTimeMillis();
+            elapsedTime = endTime - startTime;
+            result += elapsedTime;
+        }
+        return result / testsQuantity;
+    }
+
+    public long addTestForSet(Set<Integer> set, int elementsQuantity, int testsQuantity) {
+        result = 0;
+        for (int i = 0; i < testsQuantity; i++) {
+            set.clear();
+            startTime = System.currentTimeMillis();
+            for (int j = 0; j < elementsQuantity; j++) {
+                set.add(j);
+            }
+            endTime = System.currentTimeMillis();
+            elapsedTime = endTime - startTime;
+            result += elapsedTime;
+        }
+        return result / testsQuantity;
+    }
+
+    public long populateTestForList(List<Integer> list, int elementsQuantity, int testsQuantity) {
+        result = 0;
+        for (int i = 0; i < testsQuantity; i++) {
+            list.clear();
+            startTime = System.currentTimeMillis();
+            for (int j = 0; j < elementsQuantity; j++) {
+                list.add(j, j);
+            }
+            endTime = System.currentTimeMillis();
+            elapsedTime = endTime - startTime;
+            result += elapsedTime;
+        }
+        return result / testsQuantity;
+    }
+
+
+
+
+
+
+
+ /*   public static long addTimeTest(List<Integer> list, int elementsQuantity, int testsQuantity) {
 
         long result = 0;
         for (int i = 0; i < testsQuantity; i++) {
@@ -19,7 +74,7 @@ public final class ListTimeTest {
         }
         return result / testsQuantity;
 
-    }
+    }*/
 
     public static long getTimeTest(List<Integer> list, int elementsQuantity, int testsQuantity) {
 
@@ -47,7 +102,7 @@ public final class ListTimeTest {
         long result = 0;
         for (int i = 0; i < testsQuantity; i++) {
             list.clear();
-            for (int k = 0; k < elementsQuantity ; k++) {
+            for (int k = 0; k < elementsQuantity; k++) {
                 list.add(k);
             }
             long startTime = System.nanoTime();
@@ -97,7 +152,7 @@ public final class ListTimeTest {
         return 0;
     }
 
-    public static double convertToMs(long nanoSeconds){
+    public static double convertToMs(long nanoSeconds) {
         return nanoSeconds / 1_000_000;
     }
 
