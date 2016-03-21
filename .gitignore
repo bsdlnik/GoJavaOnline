@@ -1,4 +1,5 @@
 docs/
-#.idea/
+.idea/
+.out/
 GoJavaExercises/out/
 #GoJavaExercises/GoJavaExercises.iml
