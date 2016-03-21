@@ -10,12 +10,17 @@ public class CollectionTimeTest {
     private long endTime = 0;
     private long result = 0;
 
-    public long addIndexTestForList(List<Integer> list, int valueAndPosition, int testsQuantity) {
+    public long addIndexTestForList(List<Integer> list, int testsQuantity, int index) {
         result = 0;
+        list.clear();
+        if (list.size() < index) {
+            for (int i = 0; i <= index + 2; i++) {
+                list.add(i);
+            }
+        }
         for (int i = 0; i < testsQuantity; i++) {
-            list.clear();
             startTime = System.currentTimeMillis();
-            list.add(valueAndPosition, valueAndPosition);
+            list.add(index, index);
             endTime = System.currentTimeMillis();
             elapsedTime = endTime - startTime;
             result += elapsedTime;

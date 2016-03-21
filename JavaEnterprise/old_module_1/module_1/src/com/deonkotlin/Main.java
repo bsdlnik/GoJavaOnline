@@ -19,11 +19,12 @@ public class Main {
         Set<Integer> hashSet = new HashSet<>();
         Set<Integer> treeSet = new TreeSet<>();
 
-        int testsQuantity = 10;
+        int testsQuantity = 100;
+        int index = 10;
 
         CollectionTimeTest test = new CollectionTimeTest();
 
-        String[][] resultTable = new String[5][22];
+        String[][] resultTable = new String[5][10];
 
         resultTable[0][0] = " # ";
         resultTable[1][0] = "ArrayList";
@@ -78,20 +79,20 @@ public class Main {
         resultTable[4][15] = " - ";
 
         // add results to table for add ( 10k )
-        resultTable[1][1] = Long.toString(test.addIndexTestForList(arrayList, 3, testsQuantity));
-        resultTable[2][1] = Long.toString(test.addIndexTestForList(linkedList, 3, testsQuantity));
+        resultTable[1][1] = Long.toString(test.addIndexTestForList(arrayList, testsQuantity, index));
+        resultTable[2][1] = Long.toString(test.addIndexTestForList(linkedList,  testsQuantity, index));
         resultTable[3][1] = Long.toString(test.addTestForSet(hashSet, 10_000, testsQuantity));
         resultTable[4][1] = Long.toString(test.addTestForSet(treeSet, 10_000, testsQuantity));
 
         // add results to table for add ( 100k )
-        resultTable[1][2] = Long.toString(test.addIndexTestForList(arrayList, 3, testsQuantity));
-        resultTable[2][2] = Long.toString(test.addIndexTestForList(linkedList, 3, testsQuantity));
+        resultTable[1][2] = Long.toString(test.addIndexTestForList(arrayList, testsQuantity, index));
+        resultTable[2][2] = Long.toString(test.addIndexTestForList(linkedList, testsQuantity, index));
         resultTable[3][2] = Long.toString(test.addTestForSet(hashSet,  100_000, testsQuantity));
         resultTable[4][2] = Long.toString(test.addTestForSet(treeSet, 100_000, testsQuantity));
 
         // add results to table for add ( 1000k )
-        resultTable[1][3] = Long.toString(test.addIndexTestForList(arrayList, 3, testsQuantity));
-        resultTable[2][3] = Long.toString(test.addIndexTestForList(linkedList, 3, testsQuantity));
+        resultTable[1][3] = Long.toString(test.addIndexTestForList(arrayList, testsQuantity, index));
+        resultTable[2][3] = Long.toString(test.addIndexTestForList(linkedList, testsQuantity, index));
         resultTable[3][3] = Long.toString(test.addTestForSet(hashSet, 1_000_000, testsQuantity));
         resultTable[4][3] = Long.toString(test.addTestForSet(treeSet, 1_000_000, testsQuantity));
 
@@ -118,7 +119,7 @@ public class Main {
                 textWriter.write("_");
             }
             textWriter.newLine();
-            textWriter.flush();
+            //textWriter.flush();
 
             for (int i = 0; i < resultTable.length; i++) {
                 for (int j = 0; j < resultTable[0].length; j++) {
@@ -131,7 +132,7 @@ public class Main {
                     }
                 }
                 textWriter.newLine();
-                textWriter.flush();
+                //textWriter.flush();
             }
 
         } catch (IOException e) {
