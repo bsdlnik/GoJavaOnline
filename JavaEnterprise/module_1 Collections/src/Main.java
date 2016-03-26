@@ -13,6 +13,7 @@ public class Main {
 
         int elements = 1_000_000;
         int tests = 100;
+        String fileName = "results_1_000_000.txt";
 
         ArrayList arrayList = new ArrayList();
         LinkedList linkedList = new LinkedList();
@@ -158,7 +159,7 @@ public class Main {
 
         BufferedWriter textWriter = null;
         try {
-            textWriter = new BufferedWriter(new FileWriter("results.txt"));
+            textWriter = new BufferedWriter(new FileWriter(fileName));
 
             textWriter.newLine();
             textWriter.flush();

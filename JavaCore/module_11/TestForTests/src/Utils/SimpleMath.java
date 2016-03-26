@@ -17,9 +17,13 @@ public class SimpleMath {
     public int modulo(final int numberA, final int numberB) {
         int modulo = numberA;
         while (modulo >= numberB) {
-            modulo = numberB;
+            modulo -= numberB;
         }
         return modulo;
+    }
+
+    public int div(final int a, final int b){
+        throw new UnsupportedOperationException("Div operation is not implemented yet!");
     }
 
 
